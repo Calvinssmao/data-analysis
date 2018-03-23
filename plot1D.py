@@ -20,8 +20,10 @@ print(all_data)
 x_label = all_data[:,0]
 y_label = all_data[:,1]
 
-# gap = tools.calculate_gap(x_label,y_label)
-# print(gap)
+"""r0 = tools.calculate_r0(x_label,y_label)
+print(2*r0)
+DSS = tools.calculate_DSS(x_label,y_label)
+print(DSS)"""
 
 # 设置标题  
 plt.title(u"标题")
