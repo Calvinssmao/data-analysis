@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt 
 from matplotlib.pylab import mpl
+import tools
 mpl.rcParams['font.sans-serif'] = ['SimHei'] #SimHei是黑体的意思
 mpl.rcParams['axes.unicode_minus'] = False #解决保存图像是负号'-'显示为方块的问题
 
@@ -19,28 +20,8 @@ print(all_data)
 x_label = all_data[:,0]
 y_label = all_data[:,1]
 
-I = 0
-for i,each in enumerate(x_label):
-	if each>0:
-		I = i
-		break
-
-max_1 = max(y_label[0:I])
-max_2 = max(y_label[I:-1])
-
-half_max_1 = max_1/2
-half_max_2 = max_2/2
-
-for i,each in enumerate(y_label[0:I]):
-	if each == max_1:
-		max_1_x = x_label[i]
-
-for i,each in enumerate(y_label[I:-1]):
-	if each == max_2:
-		max_2_x = x_label[I+i]
-
-gap = max_2_x-max_1_x
-print("2r0:" + str(gap))
+# gap = tools.calculate_gap(x_label,y_label)
+# print(gap)
 
 # 设置标题  
 plt.title(u"标题")
